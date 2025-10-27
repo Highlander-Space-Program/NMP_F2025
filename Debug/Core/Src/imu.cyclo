@@ -1,0 +1,4 @@
+../Core/Src/imu.c:17:6:writeIMU	1
+../Core/Src/imu.c:31:9:readIMU	1
+../Core/Src/imu.c:48:6:configIMU	1
+../Core/Src/imu.c:54:6:readAccelData	1
