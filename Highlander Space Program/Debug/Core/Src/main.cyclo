@@ -1,0 +1,8 @@
+../Core/Inc/imu_state_machine.h:16:22:determineTransition	11
+../Core/Inc/imu_state_machine.h:33:6:Tick_IMU	9
+../Core/Src/main.c:70:5:main	1
+../Core/Src/main.c:123:6:SystemClock_Config	3
+../Core/Src/main.c:170:13:MX_SPI1_Init	2
+../Core/Src/main.c:210:13:MX_USART2_UART_Init	5
+../Core/Src/main.c:258:13:MX_GPIO_Init	1
+../Core/Src/main.c:302:6:Error_Handler	1
