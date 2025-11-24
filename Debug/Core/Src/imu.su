@@ -1,0 +1,4 @@
+../Core/Src/imu.c:11:9:readIMU	32	static
+../Core/Src/imu.c:22:6:writeIMU	32	static
+../Core/Src/imu.c:34:6:configIMU	16	static
+../Core/Src/imu.c:49:6:readAccelData	40	static
