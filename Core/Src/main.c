@@ -18,12 +18,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-#include <stdio.h> // For sprintf
 #include "imu.h"
 #include "imu_state_machine.h"
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
 
@@ -97,18 +95,11 @@ int main(void)
   MX_SPI1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
-  configIMU();
-
-  uint8_t whoami;
-  whoami = readIMU(0x75);
-
-  accel_t accelData;
-  accelData.state = ON_PAD;
-
-  char txBuf[64];
-  int length;
-
+   configIMU();				//IMU config
+   uint8_t whoami;
+   whoami = readIMU(0x75);	//whoami reg = 0x75
+   accel_t accelData;
+   accelData.state = On_Pad;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -116,18 +107,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
-
-    /* USER CODE BEGIN 3 */
-	  //readAccelData(&accelData);
 	  Tick_IMU(&accelData);
-
-	  HAL_Delay(20);
-
-	  length = sprintf(txBuf, "%.2f,%.2f,%.2f\r\n", accelData.gX, accelData.gY, accelData.gZ);
-
-	  HAL_UART_Transmit(&huart2, (uint8_t*)txBuf, length, HAL_MAX_DELAY);
-
+	  //readAccelData(&accelData);
+    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
